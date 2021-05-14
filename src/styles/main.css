@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,300&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	max-width: 100vw;
+	font-family: 'Newsreader', serif;
+}
+
+.skip-to-content {
+	position: absolute;
+	top: -100px;
+	left: 20px;
+	background-color: #C7B3B6;
+	color: #FFFFFF;
+	padding: 24px 36px;
+	border-radius: 8px;
+	z-index: 3;
+}
+
+.skip-to-content:focus {
+	top: 20px;
+}

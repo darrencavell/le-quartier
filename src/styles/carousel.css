@@ -1,0 +1,137 @@
+.carousel {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  vertical-align: top;
+  background-position: center center;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  position: static;
+}
+
+.carousel-item.prev {
+  transform: translateX(-100%);
+}
+
+.carousel-item.next {
+  transform: translateX(100%);
+}
+
+.carousel-item .carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.carousel-item .carousel-caption .carousel-title {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.carousel-item .carousel-caption .carousel-subtitle {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: left;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.carousel-button {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: unset;
+  border: 0;
+}
+
+.carousel-button.button-left {
+  left: 5px;
+}
+
+.carousel-button.button-right {
+  right: 5px;
+}
+
+/* arrow */
+.arrow {
+  border: solid #FFFFFF;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  transform-origin: center center;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  animation: animate-right 1s ease-out infinite alternate;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  animation: animate-left 1s ease-out infinite alternate;
+}
+
+@keyframes animate-right {
+  from {
+    transform: rotate(-45deg) scale(1) translateX(0);
+  }
+  to {
+    transform: rotate(-45deg) scale(1.2) translateX(5px) translateY(5px);
+  }
+}
+
+@keyframes animate-left {
+  from {
+    transform: rotate(135deg) scale(1) translateX(0);
+  }
+  to {
+    transform: rotate(135deg) scale(1.2) translateX(5px) translateY(5px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-item .carousel-caption .carousel-title {
+    font-size: 48px;
+    bottom: 60px;
+  }
+  
+  .carousel-item .carousel-caption .carousel-subtitle {
+    font-size: 24px;
+    bottom: 30px;
+  }
+  
+  .arrow {
+    border: solid #FFFFFF;
+    border-width: 0 6px 6px 0;
+    padding: 6px;
+    transform-origin: center center;
+  }
+}

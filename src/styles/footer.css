@@ -1,0 +1,26 @@
+.footer {
+  background-color: #C8C0B7;
+  padding: 40px 20px;
+}
+
+.footer .footer-headnote {
+  padding-bottom: 24px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.footer-restaurant,
+.footer-place,
+.footer-state {
+  line-height: 22px;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.footer-restaurant {
+}
+
+.footer-logo {
+  height: 33px;
+  width: unset;
+}
