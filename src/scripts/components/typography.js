@@ -20,9 +20,11 @@ export const paragraph = props => {
 }
 
 export const link = props => {
-  const { className, href, text } = props;
+  const { children, className, href } = props;
 
   return `
-    <a ${property('class', className)} ${property('href', href)}>${text}</a>
+    <a ${property('class', className)} ${property('href', href)}>
+      ${children}
+    </a>
   `
 }

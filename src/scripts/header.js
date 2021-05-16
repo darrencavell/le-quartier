@@ -10,7 +10,7 @@ const contents = [
   [
     { close: true },
     { logo: true, url: './images/lequartier.png', alt: 'le quartier logo' },
-    { link: true, title: 'Home', href: '#' },
+    { link: true, title: 'Home', href: '/' },
     { link: true, title: 'Favorite', href: '#' },
     { link: true, title: 'About Us', href: 'https://id.linkedin.com/in/darrencavell' }
   ],
@@ -53,7 +53,13 @@ headerNode.innerHTML = `
                 `;
               } else if (Object.keys(menu).includes('link')) {
                 return `
-                  ${link({ className: 'sidebar-link', href: menu.href, text: menu.title })}
+                  ${link({
+                    className: 'sidebar-link', 
+                    href: menu.href,
+                    children: `
+                      <span>${menu.title}</span>
+                    `
+                  })}
                 `;
               } else {
                 return `

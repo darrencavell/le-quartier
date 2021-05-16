@@ -17,13 +17,34 @@
 
 .story-title {
   margin-bottom: 24px;
+  position: relative;
+  display: block;
 }
 
-@media screen and (min-width: 1440px) {
+.story-title span {
+  font-size: 32px;
+}
+
+.story-title span::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  background-color: #C7B3B6;
+  height: 25px;
+  width: 100%;
+  z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
   .story {
-    padding-left: 392px;
-    padding-right: 392px;
+    padding-left: 120px;
+    padding-right: 120px;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .story-image {
+    align-self: center;
   }
 
   .story-description {
@@ -33,5 +54,21 @@
   .story:nth-child(2n) .story-description {
     grid-column-start: 1;
     grid-row-start: 1;
+  }
+
+  .story-subtitle {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .story {
+    padding-left: 392px;
+    padding-right: 392px;
   }
 }
