@@ -1,0 +1,11 @@
+.content.content-detail {
+  margin-top: 120px;
+}
+
+.carousel.carousel-detail {
+  margin: 20px 20px 0;
+}
+
+.carousel.carousel-detail .carousel-item-wrapper {
+  padding: 0 30px;
+}

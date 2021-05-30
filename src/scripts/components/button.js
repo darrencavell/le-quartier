@@ -1,5 +1,5 @@
 import '../../styles/components/button.css';
-import { property } from '../utils';
+import { property } from '../globals/utils';
 
 export const button = props => {
   const { children, className, id } = props;

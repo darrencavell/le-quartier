@@ -1,5 +1,5 @@
 import '../../styles/components/image.css';
-import { property } from '../utils';
+import { property } from '../globals/utils';
 
 export const image = props => {
   const { alt, className = '', src } = props;

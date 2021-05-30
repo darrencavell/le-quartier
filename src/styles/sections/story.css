@@ -1,9 +1,9 @@
 .story {
-  margin-top: 60px;
+  margin-top: 50px;
+  padding-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
   display: grid;
-  background-color: rgba(250, 250, 250, .5);
 }
 
 .story:last-child {
@@ -11,8 +11,8 @@
 }
 
 .story-description {
-  padding: 40px 20px;
-  z-index: -2;
+  padding: 40px 20px 0;
+  background-color: rgba(250, 250, 250, .5);
 }
 
 .story-title {
@@ -22,7 +22,17 @@
 }
 
 .story-title span {
-  font-size: 32px;
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.story-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #727272;
+  text-align: left;
 }
 
 .story-title span::before {
@@ -48,6 +58,7 @@
   }
 
   .story-description {
+    padding: 40px 20px;
     align-self: center;
   }
 

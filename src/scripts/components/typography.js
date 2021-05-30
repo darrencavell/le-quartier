@@ -1,5 +1,5 @@
 import '../../styles/components/typography.css';
-import { property } from '../utils';
+import { property } from '../globals/utils';
 
 export const h1 = props => {
   const { className, text } = props;
@@ -10,6 +10,17 @@ export const h1 = props => {
     </h1>
   `
 };
+
+export const bold = props => {
+  const { className, text } = props;
+
+  return `
+    <strong ${property('class', className)}>
+      <span>${text}</span>
+    </strong>
+  `
+};
+
 
 export const paragraph = props => {
   const { className, text } = props;

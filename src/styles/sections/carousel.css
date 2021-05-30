@@ -8,7 +8,9 @@
   top: 0;
   opacity: 0;
   width: 100%;
+  min-height: 66px;
   vertical-align: top;
+  text-align: center;
   background-position: center center;
 }
 
@@ -85,6 +87,10 @@
   border-width: 0 3px 3px 0;
   padding: 3px;
   transform-origin: center center;
+}
+
+.arrow.black {
+  border-color: #000000;
 }
 
 .right {

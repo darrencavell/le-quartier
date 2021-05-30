@@ -6,6 +6,10 @@
   background-color: #FFFFFF;
 }
 
+.navigation .icon-line.black {
+  background-color: #000000;
+}
+
 .navigation .icon-line.line-1 {
   width: 44px;
   transform-origin: center;
