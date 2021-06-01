@@ -1,39 +1,14 @@
 .button-favourite {
-  background-color: green;
+  position: fixed;
+  z-index: 1;
+  right: 15px;
+  bottom: 15px;
+  background-color: #C7B3B6;
   border-radius: 50%;
   width: 64px;
   height: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 11px;
-}
-
-.heart {
-  position: relative;
-  background-color: red;
-  display: block;
-  height: 30px;
-  width: 30px;
-  transform: rotate(45deg);
-}
-
-.heart::before,
-.heart::after {
-  content: '';
-  position: absolute;
-  background-color: red;
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-}
-
-.heart::before {
-  top: 0;
-  left: -15px;
-}
-
-.heart::after {
-  top: -15px;
-  right: 0;
+  padding-top: 3px;
 }

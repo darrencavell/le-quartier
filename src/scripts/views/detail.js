@@ -9,16 +9,9 @@ import { bold, paragraph } from '../components/typography';
 
 import { renderChildren, urlSlicing, urlSplitting } from '../globals/utils';
 import { IMAGE_SIZE } from '../globals/constants';
-import FavouriteRestaurantIdb from '../globals/favouriteIdb';
 import API from '../globals/endpoint';
 
 import '../../styles/views/detail.css';
-
-const {
-  deleteRestaurant,
-  getRestaurant,
-  putRestaurant
-} = FavouriteRestaurantIdb;
 
 const Detail = {
   async render() {
@@ -73,14 +66,8 @@ const Detail = {
     await Carousel.componentDidMount();
     
     const favourites = document.getElementById('favourites');
-    favourites.innerHTML = await Favourites.render();
-    await Favourites.componentDidMount(() => {
-      if (getRestaurant(id)) {
-        deleteRestaurant(id);
-      } else {
-        putRestaurant(restaurant);
-      }
-    });
+    favourites.innerHTML = await Favourites.render({ id });
+    await Favourites.componentDidMount({ id, restaurant });
 
     const footer = document.getElementById('footer');
     footer.innerHTML = await Footer.render();

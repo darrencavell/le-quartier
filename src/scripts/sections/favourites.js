@@ -1,22 +1,46 @@
 import '../../styles/sections/favourites.css';
 import { button } from '../components/button';
 
+import FavouriteRestaurantIdb from '../globals/favouriteIdb';
+
+const {
+  deleteRestaurant,
+  getRestaurant,
+  putRestaurant
+} = FavouriteRestaurantIdb;
+
 const Favourites = {
   async render(props = {}) {
+    const { id } = props;
+
     return `
       ${button({
         className: 'button-favourite',
         id: 'favourites-heart-button',
-        children: `
-          <i class="heart"></i>
+        children: await getRestaurant(id) ? `
+          <i class="fa fa-heart" aria-hidden="true"></i>
+        ` : `
+          <i class="fa fa-heart-o" aria-hidden="true"></i>
         `
       })}
     `
   },
-  async componentDidMount(callback) {
-    const button = document.getElementById('favourites-heart-button');
-    button.addEventListener('click', event => {
-      callback();
+  async componentDidMount(props = {}) {
+    const { id, restaurant } = props;
+
+    const heartButton = document.getElementById('favourites-heart-button');
+    heartButton.addEventListener('click', async () => {
+      if (await getRestaurant(id)) {
+        await deleteRestaurant(id);
+        heartButton.innerHTML = `
+          <i class="fa fa-heart-o" aria-hidden="true"></i>
+        `
+      } else {
+        await putRestaurant(restaurant);
+        heartButton.innerHTML = `
+          <i class="fa fa-heart" aria-hidden="true"></i>
+        `
+      }
     });
   }
 }

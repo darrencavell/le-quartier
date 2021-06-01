@@ -1,8 +1,11 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 
-import App from './app';
 import { Workbox } from 'workbox-window';
+import WebSocket from './globals/websocket';
+import CONFIG from './globals/config';
+
+import App from './app';
 
 // import './routes/header';
 // import './components/carousel';
@@ -25,5 +28,6 @@ if ('serviceWorker' in navigator) {
     }).catch(registrationError => {
       console.log('[Service Worker] registration failed: ', registrationError);
     });
+    WebSocket.initialize(CONFIG.WEB_SOCKET_SERVER);
   });
 }
