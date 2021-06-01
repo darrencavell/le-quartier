@@ -1,4 +1,3 @@
-import CONFIG from './config';
 import NotificationHelper from './notificationHandler';
 
 const WebSocketInitiator = {
@@ -8,11 +7,10 @@ const WebSocketInitiator = {
   },
   _handleMessage(message) {
     const data = JSON.parse(message.data);
-    console.log('data', data)
     NotificationHelper.sendNotification({
-      title: 'Restaurant Hits on Jakarta'
-    })
-  }
-}
+      title: `Restaurant Hits on Jakarta ${data.overview}`,
+    });
+  },
+};
 
 export default WebSocketInitiator;

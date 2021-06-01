@@ -2,27 +2,29 @@ import CONFIG from './config';
 
 const ENDPOINT = {
   LIST_RESTAURANT: async () => {
-    return await (await fetch(`${CONFIG.BASE_URL}/list`)).json();
+    const response = await fetch(`${CONFIG.BASE_URL}/list`);
+    return response.json();
   },
   DETAIL_RESTAURANT: async (id) => {
-    return await (await fetch(`${CONFIG.BASE_URL}/detail/${id}`)).json();
+    const response = await fetch(`${CONFIG.BASE_URL}/detail/${id}`);
+    return response.json();
   },
   QUERY_RESTAURANT: async (query) => {
-    return await (await fetch(`${CONFIG.BASE_URL}/search?q=${query}`)).json();
+    const response = await fetch(`${CONFIG.BASE_URL}/search?q=${query}`);
+    return response.json();
   },
-  // INSERT_REVIEW: async (data) => {
-  //   await fetch(`${CONFIG.BASE_URL}/review`{
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'X-Auth-Token:': CONFIG.API_KEY
-  //     },
-  //     body: JSON.stringify(data)
-  //   });
-  // },
-  IMAGE_RESTAURANT: (size, pictureId) => {
-    return `${CONFIG.IMAGE_URL}/${size}/${pictureId}`;
-  }
-}
+  INSERT_REVIEW: async (data) => {
+    const response = await fetch(`${CONFIG.BASE_URL}/review`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Auth-Token': CONFIG.API_KEY,
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  },
+  IMAGE_RESTAURANT: (size, pictureId) => `${CONFIG.IMAGE_URL}/${size}/${pictureId}`,
+};
 
 export default ENDPOINT;

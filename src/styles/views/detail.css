@@ -3,9 +3,48 @@
 }
 
 .carousel.carousel-detail {
-  margin: 20px 20px 0;
+  margin: 20px 0 0;
+  overflow-y: hidden;
 }
 
 .carousel.carousel-detail .carousel-item-wrapper {
   padding: 0 30px;
 }
+
+.add-review {
+  margin: 0 20px;
+}
+
+.detail-review-name,
+.detail-review-data {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .content.content-detail {
+    margin-top: 160px;
+  }
+  
+  .carousel.carousel-detail {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+  
+  .add-review {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .carousel.carousel-detail {
+    margin-left: 392px;
+    margin-right: 392px;
+  }
+
+  .add-review {
+    padding-left: 392px;
+    padding-right: 392px;
+  }
+}
+

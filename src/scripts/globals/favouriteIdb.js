@@ -4,13 +4,13 @@ import CONFIG from './config';
 const {
   DATABASE_NAME,
   DATABASE_VERSION,
-  OBJECT_STORE_NAME
+  OBJECT_STORE_NAME,
 } = CONFIG;
 
 const idb = openDB(DATABASE_NAME, DATABASE_VERSION, {
   upgrade(database) {
-    database.createObjectStore(OBJECT_STORE_NAME, { keyPath: 'id' })
-  }
+    database.createObjectStore(OBJECT_STORE_NAME, { keyPath: 'id' });
+  },
 });
 
 const FavouriteRestaurantIdb = {
@@ -25,7 +25,7 @@ const FavouriteRestaurantIdb = {
   },
   async deleteRestaurant(id) {
     return (await idb).delete(OBJECT_STORE_NAME, id);
-  }
-}
+  },
+};
 
 export default FavouriteRestaurantIdb;

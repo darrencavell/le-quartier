@@ -6,7 +6,7 @@ const routes = {
   '/': Landing,
   '/restaurants': Landing,
   '/favourites': Favourites,
-  '/detail/:id': Detail
-}
+  '/detail/:id': Detail,
+};
 
 export default routes;

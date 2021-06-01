@@ -1,0 +1,28 @@
+.add-review-wrapper {
+  display: flex;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.add-review-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.add-review-label {
+  text-transform: capitalize;
+  font-size: 14px;
+  color: #555555;
+  text-align: left;
+}
+
+.add-review-button {
+  background-color: #C8C0B7;
+  color: #FFFFFF;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}

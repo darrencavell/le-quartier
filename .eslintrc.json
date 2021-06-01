@@ -12,7 +12,11 @@
     "sourceType": "module"
   },
   "rules": {
-    "linebreak": ["error", "windows"],
+    "no-underscore-dangle": "off",
+    "no-restricted-globals": "off",
+    "comma-dangle": "off",
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "windows"],
     "quotes": ["error", "single"]
   }
 }

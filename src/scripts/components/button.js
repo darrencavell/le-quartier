@@ -1,7 +1,7 @@
 import '../../styles/components/button.css';
 import { property } from '../globals/utils';
 
-export const button = props => {
+const Button = (props) => {
   const { children, className, id } = props;
 
   return `
@@ -9,4 +9,6 @@ export const button = props => {
       ${children}
     </button>
   `;
-}
+};
+
+export default Button;

@@ -1,6 +1,7 @@
 const NotificationHelper = {
   async sendNotification({ title, options }) {
-    if (!'Notification' in window) {
+    if (!('Notification' in window)) {
+      // eslint-disable-next-line no-console
       console.error('Notification not supported!');
       return;
     }
@@ -9,8 +10,10 @@ const NotificationHelper = {
       const status = await Notification.requestPermission();
 
       if (status === 'denied') {
+        // eslint-disable-next-line no-console
         console.error('Notification denied!');
       } else if (status === 'default') {
+        // eslint-disable-next-line no-console
         console.error('Permission closed!');
       }
 
@@ -19,7 +22,7 @@ const NotificationHelper = {
 
     const serviceWorkerRegistration = await navigator.serviceWorker.ready;
     serviceWorkerRegistration.showNotification(title, options);
-  }
-}
+  },
+};
 
 export default NotificationHelper;

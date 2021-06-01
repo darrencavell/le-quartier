@@ -4,7 +4,7 @@
   "description": "Discover restaurants all around you.",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#FFFFFF",
+  "background_color": "#000000",
   "theme_color": "#C8C0B7",
   "icons": [
     {

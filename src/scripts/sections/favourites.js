@@ -1,12 +1,13 @@
+/* eslint-disable indent */
 import '../../styles/sections/favourites.css';
-import { button } from '../components/button';
+import Button from '../components/button';
 
 import FavouriteRestaurantIdb from '../globals/favouriteIdb';
 
 const {
   deleteRestaurant,
   getRestaurant,
-  putRestaurant
+  putRestaurant,
 } = FavouriteRestaurantIdb;
 
 const Favourites = {
@@ -14,16 +15,16 @@ const Favourites = {
     const { id } = props;
 
     return `
-      ${button({
+      ${Button({
         className: 'button-favourite',
         id: 'favourites-heart-button',
         children: await getRestaurant(id) ? `
           <i class="fa fa-heart" aria-hidden="true"></i>
         ` : `
           <i class="fa fa-heart-o" aria-hidden="true"></i>
-        `
+        `,
       })}
-    `
+    `;
   },
   async componentDidMount(props = {}) {
     const { id, restaurant } = props;
@@ -34,15 +35,15 @@ const Favourites = {
         await deleteRestaurant(id);
         heartButton.innerHTML = `
           <i class="fa fa-heart-o" aria-hidden="true"></i>
-        `
+        `;
       } else {
         await putRestaurant(restaurant);
         heartButton.innerHTML = `
           <i class="fa fa-heart" aria-hidden="true"></i>
-        `
+        `;
       }
     });
-  }
-}
+  },
+};
 
 export default Favourites;

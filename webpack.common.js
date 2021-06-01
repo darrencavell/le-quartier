@@ -3,8 +3,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const path = require('path');
 
-console.log("DIRNAME", path.resolve(__dirname, 'src/scripts/sw.js'))
-
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
@@ -40,17 +38,6 @@ module.exports = {
         },
       ],
     }),
-    // new WorkboxPlugin.InjectManifest({
-    //   swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
-    //   swDest: 'sw.js',
-    //   exclude: [
-    //     /\.map$/,
-    //     /manifest$/,
-    //     /\.htaccess$/,
-    //     /service-worker\.js$/,
-    //     /sw\.js$/,
-    //   ],
-    // })
     new WorkboxPlugin.InjectManifest({
       swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
       swDest: 'sw.js',
