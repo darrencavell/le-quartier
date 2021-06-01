@@ -6,7 +6,7 @@ const Footer = {
   async render() {
     return `
       <div class="footer-headnote">
-        ${Image({ alt: 'le quartier logo', className: 'footer-logo', src: './images/lequartier.png' })}
+        ${Image({ alt: 'le quartier logo', className: 'footer-logo', src: './images/lequartier-black.png' })}
       </div>
       ${Paragraph({ className: 'footer-restaurant', text: '© 2020 LE QUARTIER' })}
       ${Paragraph({ className: 'footer-place', text: 'Rukan BEZ, Jalan Kelapa Puan 228' })}

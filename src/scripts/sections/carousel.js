@@ -12,6 +12,7 @@ const Carousel = {
       </div>
       ${Button({
         className: 'carousel-button button-left',
+        ariaLabel: 'carousel-left-button',
         id: 'carousel-left-button',
         children: `
           <i class="arrow left ${isBlackTheme ? 'black' : ''}"></i>
@@ -19,6 +20,7 @@ const Carousel = {
       })}
       ${Button({
         className: 'carousel-button button-right',
+        ariaLabel: 'carousel-right-button',
         id: 'carousel-right-button',
         children: `
             <i class="arrow right ${isBlackTheme ? 'black' : ''}"></i>

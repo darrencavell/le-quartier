@@ -73,6 +73,7 @@ const Header = {
                   ${Button({
                     className: 'navigation active',
                     id: 'navigation-close-icon',
+                    ariaLabel: 'hamburger-navigation',
                     children: `
                       <span class="icon-line line-1"></span>
                       <span class="icon-line line-2"></span>

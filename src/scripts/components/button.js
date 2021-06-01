@@ -2,10 +2,10 @@ import '../../styles/components/button.css';
 import { property } from '../globals/utils';
 
 const Button = (props) => {
-  const { children, className, id } = props;
+  const { ariaLabel, children, className, id } = props;
 
   return `
-    <button ${property('class', className)} ${property('id', id)}>
+    <button ${property('aria-label', ariaLabel)} ${property('class', className)} ${property('id', id)}>
       ${children}
     </button>
   `;

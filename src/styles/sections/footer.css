@@ -1,12 +1,12 @@
 .footer {
-  background-color: #C8C0B7;
+  background-color: #C8C1B6;
   padding: 40px 20px;
 }
 
 .footer .footer-headnote {
   padding-bottom: 24px;
   margin-bottom: 12px;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #000000;
 }
 
 .footer-restaurant,
@@ -14,10 +14,7 @@
 .footer-state {
   line-height: 22px;
   font-size: 14px;
-  color: #FFFFFF;
-}
-
-.footer-restaurant {
+  color: #000000;
 }
 
 .footer-logo {
