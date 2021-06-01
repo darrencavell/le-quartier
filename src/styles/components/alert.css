@@ -1,0 +1,8 @@
+.alert {
+  visibility: hidden;
+  display: none;
+  background-color: #F0EEEC;
+  border-radius: 8px;
+  border: 1px solid #8E646B;
+  padding: 12px 24px;
+}

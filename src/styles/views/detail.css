@@ -15,6 +15,10 @@
   margin: 0 20px;
 }
 
+.add-review .alert {
+  margin-bottom: 20px;
+}
+
 .detail-review-name,
 .detail-review-data {
   font-size: 14px;
