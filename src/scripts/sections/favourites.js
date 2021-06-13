@@ -30,7 +30,7 @@ const Favourites = {
     const { id, restaurant } = props;
 
     const heartButton = document.getElementById('favourites-heart-button');
-    heartButton.addEventListener('click', async () => {
+    heartButton.addEventListener('click', async (event) => {
       if (await getRestaurant(id)) {
         await deleteRestaurant(id);
         heartButton.innerHTML = `
@@ -42,7 +42,11 @@ const Favourites = {
           <i class="fa fa-heart" aria-hidden="true"></i>
         `;
       }
-    });
+
+      if (event.detail) {
+        event.detail(heartButton.innerHTML.trim());
+      }
+    }, false);
   },
 };
 

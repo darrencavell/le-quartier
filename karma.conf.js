@@ -22,6 +22,7 @@ module.exports = function (config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'specs/**/*Spec.js': ['webpack', 'sourcemap'],
+      'src/**/*.js': ['webpack', 'sourcemap'],
     },
 
     webpack: {
@@ -31,6 +32,21 @@ module.exports = function (config) {
       // webpack configuration
       devtool: 'inline-source-map',
       mode: 'development',
+      module: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: [
+              {
+                loader: 'style-loader',
+              },
+              {
+                loader: 'css-loader',
+              },
+            ],
+          },
+        ]
+      }
     },
 
     webpackMiddleware: {
