@@ -55,6 +55,8 @@
 
   .story-image {
     align-self: center;
+    width: 568px;
+    height: 380px;
   }
 
   .story-description {

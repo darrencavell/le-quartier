@@ -5,7 +5,11 @@ const Image = (props) => {
   const { alt, className = '', src } = props;
 
   return `
-    <img ${property('class', className)} ${property('src', src)} ${property('alt', alt)} />
+    <picture>
+      <source media="(max-width: 767px)" ${property('srcset', src.small)}>
+      <source media="(min-width: 768px)" ${property('srcset', src.large)}>
+      <img ${property('class', `lazyload ${className}`)} ${property('data-src', src.medium)} ${property('alt', alt)} />
+    </picture>
   `;
 };
 

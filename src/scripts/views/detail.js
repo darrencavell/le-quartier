@@ -14,7 +14,6 @@ import {
   urlSlicing,
   urlSplitting,
 } from '../globals/utils';
-import CONSTANTS from '../globals/constants';
 import API from '../globals/endpoint';
 
 import '../../styles/views/detail.css';
@@ -42,12 +41,11 @@ const Detail = {
     const detailRestaurantResult = await API.DETAIL_RESTAURANT(resourceId);
     const { restaurant } = detailRestaurantResult;
     const {
-      address, categories, city, customerReviews, id, menus, pictureId,
+      address, categories, city, customerReviews, id, menus,
     } = restaurant;
     const { drinks, foods } = menus;
-    const pictureSrc = API.IMAGE_RESTAURANT(CONSTANTS.SMALL, pictureId);
     const content = document.getElementById('content');
-    content.innerHTML += await Story.render({ ...restaurant, pictureSrc });
+    content.innerHTML += await Story.render({ ...restaurant });
 
     content.innerHTML += await Specifities.render({
       specifities: [

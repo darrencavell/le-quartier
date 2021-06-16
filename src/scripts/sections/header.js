@@ -10,7 +10,15 @@ const Header = {
     const contents = [
       [
         { close: true },
-        { logo: true, url: './images/lequartier.png', alt: 'le quartier logo' },
+        {
+          logo: true,
+          url: {
+            small: './images/lequartier-small.png',
+            medium: './images/lequartier.png',
+            large: './images/lequartier-large.png'
+          },
+          alt: 'le quartier logo'
+        },
         { link: true, title: 'Home', href: '/#/restaurants' },
         { link: true, title: 'Favorite', href: '/#/favourites' },
         { link: true, title: 'About Us', href: 'https://id.linkedin.com/in/darrencavell' },
@@ -28,8 +36,12 @@ const Header = {
       <div class="header-wrapper" id="header-wrapper">
         ${Image({
           className: 'header-logo',
-          src: isBlackTheme ? './images/lequartier-black.png' : './images/lequartier.png',
-          alt: 'le quartier logo',
+          src: {
+            small: isBlackTheme ? './images/lequartier-black-small.png' : './images/lequartier-small.png',
+            medium: isBlackTheme ? './images/lequartier-black.png' : './images/lequartier.png',
+            large: isBlackTheme ? './images/lequartier-black-large.png' : './images/lequartier-large.png',
+          },
+          alt: 'le quartier logo'
         })}
         ${Button({
           className: 'navigation',
@@ -53,7 +65,15 @@ const Header = {
 
               if (Object.keys(menu).includes('logo')) {
                 return `
-                  ${Image({ alt: menu.alt, className: 'sidebar-logo', src: menu.url })}
+                  ${Image({
+                    alt: menu.alt,
+                    className: 'sidebar-logo',
+                    src: {
+                      small: menu.url.small,
+                      medium: menu.url.medium,
+                      large: menu.url.large
+                    }
+                  })}
                 `;
               }
 

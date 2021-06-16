@@ -29,11 +29,9 @@ const Favourite = {
 
     const restaurants = await getRestaurants();
     const story = document.getElementById('content');
-    const restaurantsHTML = await Promise.all(restaurants.map(async (restaurant) => {
-      const { pictureId } = restaurant;
-      const pictureSrc = API.IMAGE_RESTAURANT(CONSTANTS.SMALL, pictureId);
-      return Story.render({ ...restaurant, pictureSrc });
-    }));
+    const restaurantsHTML = await Promise.all(
+      restaurants.map(async (restaurant) => Story.render({ ...restaurant }))
+    );
     story.innerHTML = renderChildren(restaurantsHTML);
 
     const footer = document.getElementById('footer');

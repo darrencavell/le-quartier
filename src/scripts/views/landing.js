@@ -23,22 +23,38 @@ const Landing = {
   async componentDidMount() {
     const images = [
       {
-        src: './images/heros/hero-image_1.jpg',
+        src: {
+          small: './images/heros/hero-image_1-small.jpg',
+          medium: './images/heros/hero-image_1.jpg',
+          large: './images/heros/hero-image_1-large.jpg'
+        },
         title: 'Chef Plating Food',
         subtitle: 'Chef Fungus is plating and handing the food to the customer',
       },
       {
-        src: './images/heros/hero-image_2.jpg',
+        src: {
+          small: './images/heros/hero-image_2-small.jpg',
+          medium: './images/heros/hero-image_2.jpg',
+          large: './images/heros/hero-image_2-large.jpg'
+        },
         title: 'Upside Food On Table',
         subtitle: 'Wonderful moments by sharing and caring about food',
       },
       {
-        src: './images/heros/hero-image_3.jpg',
+        src: {
+          small: './images/heros/hero-image_3-small.jpg',
+          medium: './images/heros/hero-image_3.jpg',
+          large: './images/heros/hero-image_3-large.jpg'
+        },
         title: 'Night Street Lamp',
         subtitle: 'Chef Fungus is plating and handing the food to the customer',
       },
       {
-        src: './images/heros/hero-image_4.jpg',
+        src: {
+          small: './images/heros/hero-image_4-small.jpg',
+          medium: './images/heros/hero-image_4.jpg',
+          large: './images/heros/hero-image_4-large.jpg'
+        },
         title: 'Biscuit Flower Beauty Shot',
         subtitle: 'Chef Fungus is plating and handing the food to the customer',
       },
@@ -52,7 +68,15 @@ const Landing = {
     carousel.innerHTML = await Carousel.render({
       children: renderChildren(images.map((individualImage) => `
         <div class="carousel-item">
-          ${Image({ alt: individualImage.title, className: 'carousel-image', src: individualImage.src })}
+          ${Image({
+            alt: individualImage.title,
+            className: 'carousel-image',
+            src: {
+              small: individualImage.src.small,
+              medium: individualImage.src.medium,
+              large: individualImage.src.large
+            }
+          })}
           <div class="carousel-caption">
             ${Paragraph({ className: 'carousel-title', text: individualImage.title })}
             ${Paragraph({ className: 'carousel-subtitle', text: individualImage.subtitle })}
