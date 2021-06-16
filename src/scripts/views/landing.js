@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import Carousel from '../sections/carousel';
 import Header from '../sections/header';
 import Story from '../sections/story';

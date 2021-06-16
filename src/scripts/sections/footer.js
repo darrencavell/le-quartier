@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import '../../styles/sections/footer.css';
 import Image from '../components/image';
 import { Paragraph } from '../components/typography';

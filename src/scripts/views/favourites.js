@@ -3,9 +3,7 @@ import Story from '../sections/story';
 import Footer from '../sections/footer';
 
 import { renderChildren } from '../globals/utils';
-import CONSTANTS from '../globals/constants';
 import FavouriteRestaurantIdb from '../globals/favouriteIdb';
-import API from '../globals/endpoint';
 
 import '../../styles/views/favourites.css';
 
