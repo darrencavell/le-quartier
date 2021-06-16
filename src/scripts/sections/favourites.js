@@ -43,7 +43,7 @@ const Favourites = {
         `;
       }
 
-      if (event.detail) {
+      if (event && event.detail && typeof (event.detail) === 'function') {
         event.detail(heartButton.innerHTML.trim());
       }
     }, false);

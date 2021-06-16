@@ -1,11 +1,15 @@
 import 'regenerator-runtime';
 
-import { precacheAndRoute } from 'workbox-precaching';
+import { precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
 import { ExpirationPlugin } from 'workbox-expiration';
+import { skipWaiting, clientsClaim } from 'workbox-core';
 
 import CONFIG from './globals/config';
+
+skipWaiting();
+clientsClaim();
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -44,3 +48,17 @@ registerRoute(
     ]
   })
 );
+
+registerRoute(
+  ({ url }) => url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com',
+  new StaleWhileRevalidate({
+    cacheName: `${CONFIG.CACHE_NAME}-FONT-RESPONSE`,
+    plugins: [
+      new ExpirationPlugin({
+        maxAgeSeconds: 100 * 60
+      })
+    ]
+  })
+);
+
+cleanupOutdatedCaches();

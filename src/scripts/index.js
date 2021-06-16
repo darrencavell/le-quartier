@@ -3,7 +3,6 @@ import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import '../styles/main.css';
 
-import { Workbox } from 'workbox-window';
 import WebSocket from './globals/websocket';
 import CONFIG from './globals/config';
 
@@ -13,10 +12,12 @@ window.addEventListener('hashchange', () => {
   App.render();
 });
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
   App.render();
 
   if ('serviceWorker' in navigator) {
+    const { Workbox } = await import('workbox-window');
+
     const workbox = new Workbox('/sw.js');
     workbox.register().then((registration) => {
       // eslint-disable-next-line no-console
